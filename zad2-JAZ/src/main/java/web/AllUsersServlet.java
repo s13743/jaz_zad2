@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import domain.User;
+import repostories.HsqlUserRepository;
 import repostories.IUserRepository;
 import repostories.UserRepository;
 
@@ -22,7 +23,8 @@ public class AllUsersServlet extends HttpServlet {
 	protected void doGet (HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		IUserRepository repository = new UserRepository();
+		//IUserRepository repository = new UserRepository();
+		IUserRepository repository = new HsqlUserRepository();
 		
 		List<User> users = repository.getAllUsers();
 		

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import domain.Privilege;
 import domain.User;
+import repostories.HsqlUserRepository;
 import repostories.IUserRepository;
 import repostories.UserRepository;
 
@@ -22,7 +23,8 @@ public class RegistartionServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		User user = retrieveUserFromRequest(request, response);
-		IUserRepository repository = new UserRepository();
+//		IUserRepository repository = new UserRepository();
+		IUserRepository repository = new HsqlUserRepository();
 		
 		repository.add(user);
 		response.sendRedirect("successSignUp.jsp");

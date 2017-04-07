@@ -1,0 +1,13 @@
+web\ProfileServlet.class
+web\filters\SetPremiumFilter.class
+web\LogInServlet.class
+web\filters\ProfileFilter.class
+repostories\IUserRepository.class
+web\AllUsersServlet.class
+web\RegistartionServlet.class
+domain\Privilege.class
+web\filters\logInSignUpFilter.class
+web\filters\PremiumFilter.class
+domain\User.class
+web\SetPremiumServlet.class
+repostories\UserRepository.class

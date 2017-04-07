@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import repostories.HsqlUserRepository;
+import repostories.IUserRepository;
 import repostories.UserRepository;
 import domain.User;
 
@@ -27,7 +29,8 @@ public class SetPremiumFilter implements Filter{
 			
 			if (session.getAttribute("username")!= null) {
 				User user = (User) session.getAttribute("username");
-				UserRepository repository = new UserRepository();
+//				IUserRepository repository = new UserRepository();
+				IUserRepository repository = new HsqlUserRepository();
 				String privilege = repository.getPrivilegeOfUser(user);
 		
 				if ( !privilege.equals("ADMIN") ) {

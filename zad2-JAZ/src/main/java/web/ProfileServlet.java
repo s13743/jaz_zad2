@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import domain.User;
+import repostories.HsqlUserRepository;
 import repostories.IUserRepository;
 import repostories.UserRepository;
 
@@ -24,7 +25,8 @@ public class ProfileServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
-		IUserRepository repository = new UserRepository();
+//		IUserRepository repository = new UserRepository();
+		IUserRepository repository = new HsqlUserRepository();
 		
 		User user = (User) session.getAttribute("username");
 		

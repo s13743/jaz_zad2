@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import repostories.HsqlUserRepository;
 import repostories.IUserRepository;
 import repostories.UserRepository;
 import domain.User;
@@ -21,7 +22,8 @@ public class SetPremiumServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		User user = retrieveUserFromRequest(request, response);
-		IUserRepository repository = new UserRepository();
+//		IUserRepository repository = new UserRepository();
+		IUserRepository repository = new HsqlUserRepository();
 		
 		if(request.getParameter("premium").equals("set")) {
 			repository.setPremium(user);
